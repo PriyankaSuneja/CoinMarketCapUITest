@@ -5,11 +5,15 @@ import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
+import net.thucydides.core.webdriver.TemporalUnitConverter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,7 +45,7 @@ public class HomePage extends PageObject {
     static final By SHOW_RESULTS_BUTTON = By.xpath("//button[contains(text(),'Show results')]");
 
     public int getNumberOfCryptoCurrencyOnPage(){
-        waitForRenderedElements($(HomePage.CC_TABLE));
+        setImplicitTimeout(10, ChronoUnit.SECONDS);
         return $(HomePage.CC_TABLE).findElements(net.serenitybdd.core.annotations.findby.By.tagName("tr")).size();
     }
 
