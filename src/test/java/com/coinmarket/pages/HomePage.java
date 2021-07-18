@@ -41,6 +41,7 @@ public class HomePage extends PageObject {
     static final By SHOW_RESULTS_BUTTON = By.xpath("//button[contains(text(),'Show results')]");
 
     public int getNumberOfCryptoCurrencyOnPage(){
+        waitForRenderedElements($(HomePage.CC_TABLE));
         return $(HomePage.CC_TABLE).findElements(net.serenitybdd.core.annotations.findby.By.tagName("tr")).size();
     }
 
