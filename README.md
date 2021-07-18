@@ -1,4 +1,4 @@
-# CoinMarketCap Acceptance Test
+# CoinMarketCap Acceptance Test [![Build Status](https://travis-ci.com/PriyankaSuneja/CoinMarketCapUITest.svg?branch=main)](https://travis-ci.com/PriyankaSuneja/CoinMarketCapUITest)
 
 ## Prerequisites
 - Maven version 3 or above and JDK version 8 or above are already installed on the host machine.
